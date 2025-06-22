@@ -1,7 +1,5 @@
 package com.s23010457.cleanzone.ui.userprofile;
 
-import androidx.lifecycle.ViewModelProvider;
-
 import android.content.Intent;
 import android.os.Bundle;
 
@@ -14,9 +12,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
-import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.s23010457.cleanzone.R;
-import com.s23010457.cleanzone.ui.LoginActivity;
+import com.s23010457.cleanzone.LoginActivity;
+import com.s23010457.cleanzone.RegistrationActivity;
+import com.s23010457.cleanzone.WelcomeActivity;
 
 public class UserProfileFragment extends Fragment {
 
@@ -32,13 +31,31 @@ public class UserProfileFragment extends Fragment {
 
         Button login = view.findViewById(R.id.login);
         Button register = view.findViewById(R.id.register);
-        Button welcome = view.findViewById(R.id.welcome);
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent loginIntent = new Intent(getActivity(), LoginActivity.class);
                 startActivity(loginIntent);
 
+            }
+        });
+
+        register.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent regintent = new Intent(getActivity(), RegistrationActivity.class);
+                startActivity(regintent);
+
+            }
+        });
+
+        Button welcomebtn = view.findViewById(R.id.welcome);
+
+        welcomebtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent welintent = new Intent(getActivity(), WelcomeActivity.class);
+                startActivity(welintent);
             }
         });
 

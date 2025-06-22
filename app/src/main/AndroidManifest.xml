@@ -18,10 +18,13 @@
         android:theme="@style/Theme.CleanZone"
         tools:targetApi="31">
         <activity
-            android:name=".ui.RegistrationActivity"
+            android:name=".WelcomeActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.LoginActivity"
+            android:name=".RegistrationActivity"
+            android:exported="false" />
+        <activity
+            android:name=".LoginActivity"
             android:exported="false" />
         <activity
             android:name=".MainActivity"

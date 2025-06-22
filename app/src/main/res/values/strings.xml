@@ -18,6 +18,7 @@
     <string name="menu_activitylist">Activities</string>
     <string name="menu_pickups">Pick Ups</string>
     <string name="menu_Notification">Notifications</string>
+    <string name="menu_Settings">Settings</string>
 
 
 </resources>
