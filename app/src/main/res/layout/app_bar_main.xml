@@ -16,7 +16,7 @@
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
-            android:background="@color/green_200"
+            android:background="@color/purple_200"
             app:popupTheme="@style/Theme.CleanZone.PopupOverlay" />
     </com.google.android.material.appbar.AppBarLayout>
 
@@ -41,7 +41,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom"
-        android:background="@color/green_500"
+        android:background="@color/purple_200"
         app:menu="@menu/bottom_nav_menu"
         app:itemIconTint="@color/white"
         app:itemTextColor="@color/white"

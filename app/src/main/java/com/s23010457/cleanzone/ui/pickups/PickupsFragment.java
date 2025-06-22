@@ -1,4 +1,4 @@
-package com.s23010457.cleanzone.ui.dashboard;
+package com.s23010457.cleanzone.ui.pickups;
 
 import androidx.lifecycle.ViewModelProvider;
 
@@ -14,17 +14,17 @@ import android.view.ViewGroup;
 
 import com.s23010457.cleanzone.R;
 
-public class DashboardFragment extends Fragment {
+public class PickupsFragment extends Fragment {
 
 
-    public static DashboardFragment newInstance() {
-        return new DashboardFragment();
+    public static PickupsFragment newInstance() {
+        return new PickupsFragment();
     }
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_dashboard, container, false);
+        View view = inflater.inflate(R.layout.fragment_pickups, container, false);
 
 
 //        Button actionButton = view.findViewById(R.id.activity_btn);
@@ -36,4 +36,3 @@ public class DashboardFragment extends Fragment {
         return view;
     }
 }
-

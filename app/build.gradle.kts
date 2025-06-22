@@ -42,6 +42,7 @@ dependencies {
     implementation(libs.lifecycle.livedata.ktx)
     implementation(libs.lifecycle.viewmodel.ktx)
     implementation(libs.navigation.fragment)
+    implementation("com.google.android.gms:play-services-maps:19.2.0")
     implementation(libs.navigation.ui)
     implementation(libs.activity)
     implementation(libs.legacy.support.v4)

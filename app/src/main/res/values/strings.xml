@@ -7,13 +7,17 @@
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
 
-    <string name="menu_home">Home</string>
+
+    <string name="maps_api_key">AIzaSyBLkNjuEUQnQW3ZtCh3nph_mo8bF9I0uLU</string>
+
+
+    <string name="menu_userprofile">User Profile</string>
     <string name="menu_gallery">Gallery</string>
     <string name="menu_slideshow">Slideshow</string>
     <string name="menu_dashboard">Dashboard</string>
     <string name="menu_activitylist">Activities</string>
     <string name="menu_pickups">Pick Ups</string>
-    <string name="menu_Notification">Activities</string>
+    <string name="menu_Notification">Notifications</string>
 
 
 
