@@ -19,6 +19,11 @@
         tools:layout="@layout/fragment_activities" />
 
     <fragment
+        android:id="@+id/nav_login"
+        android:name="com.s23010457.cleanzone.ui.activities.ActivitiesFragment"
+        android:label="login"
+        tools:layout="@layout/fragment_activities" />
+    <fragment
         android:id="@+id/nav_pickups"
         android:name="com.s23010457.cleanzone.ui.pickups.PickupsFragment"
         android:label="@string/menu_pickups"
@@ -31,6 +36,6 @@
     <fragment
         android:id="@+id/nav_user_profile"
         android:name="com.s23010457.cleanzone.ui.userprofile.UserProfileFragment"
-        android:label="@string/menu_Notification"
+        android:label="@string/menu_userprofile"
         tools:layout="@layout/fragment_user_profile" />
 </navigation>
