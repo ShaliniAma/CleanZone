@@ -23,11 +23,7 @@
         android:name="com.s23010457.cleanzone.ui.settings.SettingsFragment"
         android:label="@string/menu_Settings"
         tools:layout="@layout/fragment_settings" />
-    <fragment
-        android:id="@+id/nav_login"
-        android:name="com.s23010457.cleanzone.ui.activities.ActivitiesFragment"
-        android:label="login"
-        tools:layout="@layout/fragment_activities" />
+
     <fragment
         android:id="@+id/nav_pickups"
         android:name="com.s23010457.cleanzone.ui.pickups.PickupsFragment"

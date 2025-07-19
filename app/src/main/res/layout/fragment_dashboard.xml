@@ -15,7 +15,7 @@
         android:background="?attr/colorPrimary"
         android:title="Dashboard"
         android:titleTextColor="@android:color/white"
-        app:navigationIcon="@drawable/ic_menu"
+        app:navigationIcon="@drawable/ic_menu_camera"
         app:popupTheme="@style/ThemeOverlay.MaterialComponents.Light" />
 
     <!-- Main content -->
@@ -45,7 +45,7 @@
                 <ImageView
                     android:layout_width="48dp"
                     android:layout_height="48dp"
-                    android:src="@drawable/ic_profile_placeholder"
+                    android:src="@drawable/ic_menu_camera"
                     android:contentDescription="Profile"
                     android:layout_marginEnd="12dp" />
 
@@ -94,7 +94,7 @@
                 <ImageView
                     android:layout_width="40dp"
                     android:layout_height="40dp"
-                    android:src="@drawable/ic_schedule"
+                    android:src="@drawable/ic_menu_slideshow"
                     android:contentDescription="Schedule" />
 
                 <TextView
@@ -117,7 +117,6 @@
         android:layout_height="56dp"
         android:layout_gravity="bottom"
         app:menu="@menu/bottom_nav_menu"
-        app:itemIconTint="@color/selector_bottom_nav"
         app:labelVisibilityMode="labeled"
         android:background="?attr/colorPrimary" />
 
