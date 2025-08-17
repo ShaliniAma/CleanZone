@@ -46,6 +46,8 @@ public class MainActivity extends AppCompatActivity {
                 R.id.nav_notifications, R.id.nav_dashboard,R.id.nav_pickups,R.id.nav_user_profile,R.id.nav_activity_list,R.id.nav_settings)
                 .setOpenableLayout(drawer)
                 .build();
+
+        // Setup NavController
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_main);
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);
@@ -53,7 +55,6 @@ public class MainActivity extends AppCompatActivity {
         // Bottom Navigation setup
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_nav);
         NavigationUI.setupWithNavController(bottomNavigationView, navController);
-
     }
 
     @Override

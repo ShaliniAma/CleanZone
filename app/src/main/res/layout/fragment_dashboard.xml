@@ -7,16 +7,7 @@
     android:layout_height="match_parent"
     tools:context=".ui.dashboard.DashboardFragment">
 
-    <!-- Top App Bar -->
-    <com.google.android.material.appbar.MaterialToolbar
-        android:id="@+id/topAppBar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="?attr/colorPrimary"
-        android:title="Dashboard"
-        android:titleTextColor="@android:color/white"
-        app:navigationIcon="@drawable/ic_menu_camera"
-        app:popupTheme="@style/ThemeOverlay.MaterialComponents.Light" />
+
 
     <!-- Main content -->
     <LinearLayout
@@ -110,14 +101,6 @@
         </GridLayout>
     </LinearLayout>
 
-    <!-- Bottom Navigation -->
-    <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/bottom_nav"
-        android:layout_width="match_parent"
-        android:layout_height="56dp"
-        android:layout_gravity="bottom"
-        app:menu="@menu/bottom_nav_menu"
-        app:labelVisibilityMode="labeled"
-        android:background="?attr/colorPrimary" />
+
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

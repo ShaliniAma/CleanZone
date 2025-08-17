@@ -23,12 +23,12 @@
         android:name="com.s23010457.cleanzone.ui.settings.SettingsFragment"
         android:label="@string/menu_Settings"
         tools:layout="@layout/fragment_settings" />
-
     <fragment
         android:id="@+id/nav_pickups"
-        android:name="com.s23010457.cleanzone.ui.pickups.PickupsFragment"
+        android:name="com.s23010457.cleanzone.ui.pickups.PickupFragment"
         android:label="@string/menu_pickups"
-        tools:layout="@layout/fragment_pickups" />
+        tools:layout="@layout/fragment_pickup" />
+
     <fragment
         android:id="@+id/nav_notifications"
         android:name="com.s23010457.cleanzone.ui.notifications.NotificationsFragment"
