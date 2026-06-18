@@ -1,5 +1,7 @@
 package com.s23010457.cleanzone.ui.complaints;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.LayoutInflater;
@@ -14,6 +16,9 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import com.s23010457.cleanzone.R;
+
+import org.json.JSONArray;
+import org.json.JSONObject;
 
 public class ComplaintsFragment extends Fragment {
 
@@ -58,7 +63,9 @@ public class ComplaintsFragment extends Fragment {
                 return;
             }
 
-            // Mock successful submission
+            // Save complaint to SharedPreferences
+            saveComplaint(title, category, description, location);
+
             Toast.makeText(requireContext(), "Complaint Submitted Successfully!", Toast.LENGTH_LONG).show();
 
             // Clear inputs
@@ -69,5 +76,24 @@ public class ComplaintsFragment extends Fragment {
         });
 
         return view;
+    }
+
+    private void saveComplaint(String title, String category, String description, String location) {
+        SharedPreferences prefs = requireContext().getSharedPreferences("UserPrefs", Context.MODE_PRIVATE);
+        String existing = prefs.getString("submitted_complaints", "[]");
+
+        try {
+            JSONArray arr = new JSONArray(existing);
+            JSONObject obj = new JSONObject();
+            obj.put("title", title);
+            obj.put("category", category);
+            obj.put("description", description);
+            obj.put("location", location);
+            arr.put(obj);
+
+            prefs.edit().putString("submitted_complaints", arr.toString()).apply();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }

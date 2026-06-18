@@ -1,24 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".ui.pickups.PickupFragment">
 
-    <!-- MapView to show pickup locations -->
+    <!-- Map section -->
     <com.google.android.gms.maps.MapView
         android:id="@+id/map_view"
         android:layout_width="match_parent"
-        android:layout_height="250dp" />
+        android:layout_height="0dp"
+        android:layout_weight="1" />
 
-    <!-- RecyclerView for the pickup schedule list -->
+    <!-- Schedule header -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Pickup Schedule"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:textColor="#333333"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:paddingTop="12dp"
+        android:paddingBottom="8dp"
+        android:background="#F5F5F5" />
+
+    <!-- Pickup locations list -->
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/pickup_schedule_recycler"
+        android:id="@+id/rv_pickups"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:padding="8dp" />
+        android:background="#F5F5F5"
+        android:paddingTop="4dp"
+        android:clipToPadding="false" />
 
 </LinearLayout>

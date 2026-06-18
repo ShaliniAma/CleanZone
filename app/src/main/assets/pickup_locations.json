@@ -1,0 +1,58 @@
+[
+  {
+    "name": "Central Park Collection Point",
+    "lat": 6.9271,
+    "lng": 79.8612,
+    "address": "123 Main St, Colombo 07",
+    "schedule": "Mon, Wed, Fri — 8:00 AM",
+    "type": "General Waste"
+  },
+  {
+    "name": "Riverside Recycling Center",
+    "lat": 6.9344,
+    "lng": 79.8428,
+    "address": "45 River Rd, Colombo 03",
+    "schedule": "Tue, Thu — 9:00 AM",
+    "type": "Recyclables"
+  },
+  {
+    "name": "Harbour View Drop-off",
+    "lat": 6.9400,
+    "lng": 79.8500,
+    "address": "78 Harbour Ave, Colombo 01",
+    "schedule": "Mon to Sat — 7:00 AM",
+    "type": "General Waste"
+  },
+  {
+    "name": "Green Valley Organic Center",
+    "lat": 6.9150,
+    "lng": 79.8700,
+    "address": "12 Green Valley Rd, Colombo 05",
+    "schedule": "Wed, Sat — 6:30 AM",
+    "type": "Organic Waste"
+  },
+  {
+    "name": "City Mall E-Waste Point",
+    "lat": 6.9220,
+    "lng": 79.8550,
+    "address": "City Mall, Level B1, Colombo 04",
+    "schedule": "Fri — 10:00 AM to 4:00 PM",
+    "type": "E-Waste"
+  },
+  {
+    "name": "University Zone Bin Cluster",
+    "lat": 6.9020,
+    "lng": 79.8610,
+    "address": "University Rd, Colombo 07",
+    "schedule": "Daily — 6:00 AM",
+    "type": "General Waste"
+  },
+  {
+    "name": "Lakefront Recycling Hub",
+    "lat": 6.9180,
+    "lng": 79.8480,
+    "address": "Beira Lake Rd, Colombo 02",
+    "schedule": "Mon, Thu — 8:30 AM",
+    "type": "Recyclables"
+  }
+]

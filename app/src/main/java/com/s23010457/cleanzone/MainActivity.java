@@ -10,6 +10,10 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.navigation.NavigationView;
 
+import android.hardware.Sensor;
+import android.hardware.SensorEvent;
+import android.hardware.SensorEventListener;
+import android.hardware.SensorManager;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
@@ -23,6 +27,12 @@ public class MainActivity extends AppCompatActivity {
 
     private AppBarConfiguration mAppBarConfiguration;
     private ActivityMainBinding binding;
+
+    private SensorManager sensorManager;
+    private Sensor accelerometer;
+    private boolean isFlipped = false;
+    private long lastPausedTime = 0;
+    private boolean ignoreNextResumeLock = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -72,7 +82,68 @@ public class MainActivity extends AppCompatActivity {
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_nav);
         NavigationUI.setupWithNavController(bottomNavigationView, navController);
 
+        // Initialize Sensor Manager and Accelerometer
+        sensorManager = (SensorManager) getSystemService(SENSOR_SERVICE);
+        if (sensorManager != null) {
+            accelerometer = sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
+        }
+    }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+        if (ignoreNextResumeLock) {
+            ignoreNextResumeLock = false;
+            lastPausedTime = 0;
+        } else {
+            // Trigger lock if background threshold exceeded (3 seconds)
+            if (lastPausedTime > 0 && (System.currentTimeMillis() - lastPausedTime) > 3000) {
+                showLockScreen();
+            }
+        }
+        // Register sensor listener
+        if (sensorManager != null && accelerometer != null) {
+            sensorManager.registerListener(sensorListener, accelerometer, SensorManager.SENSOR_DELAY_NORMAL);
+        }
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        lastPausedTime = System.currentTimeMillis();
+        // Unregister sensor listener to save battery
+        if (sensorManager != null) {
+            sensorManager.unregisterListener(sensorListener);
+        }
+    }
+
+    private final SensorEventListener sensorListener = new SensorEventListener() {
+        @Override
+        public void onSensorChanged(SensorEvent event) {
+            if (event.sensor.getType() == Sensor.TYPE_ACCELEROMETER) {
+                float z = event.values[2];
+                // z around -9.8 m/s^2 means screen is facing flat down
+                if (z < -8.0) {
+                    if (!isFlipped) {
+                        isFlipped = true;
+                        showLockScreen();
+                    }
+                } else {
+                    isFlipped = false;
+                }
+            }
+        }
+
+        @Override
+        public void onAccuracyChanged(Sensor sensor, int accuracy) {
+            // Not used
+        }
+    };
+
+    private void showLockScreen() {
+        ignoreNextResumeLock = true;
+        Intent intent = new Intent(this, BiometricLockActivity.class);
+        startActivity(intent);
     }
 
     private void performLogout() {
