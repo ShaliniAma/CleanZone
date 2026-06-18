@@ -4,34 +4,64 @@
     tools:showIn="navigation_view">
 
     <group android:checkableBehavior="single">
+        <!-- 1. Dashboard -->
         <item
             android:id="@+id/nav_dashboard"
-            android:icon="@drawable/ic_menu_gallery"
-            android:title="@string/menu_dashboard" />
+            android:icon="@drawable/ic_home"
+            android:title="Dashboard" />
 
-        <item
-            android:id="@+id/nav_activity_list"
-            android:icon="@drawable/ic_menu_gallery"
-            android:title="@string/menu_activitylist" />
-
+        <!-- 2. Schedule -->
         <item
             android:id="@+id/nav_pickups"
-            android:icon="@drawable/ic_menu_gallery"
-            android:title="@string/menu_pickups" />
+            android:icon="@drawable/ic_schedule"
+            android:title="Schedule" />
+
+        <!-- 3. Notices -->
         <item
             android:id="@+id/nav_notifications"
-            android:icon="@drawable/ic_menu_gallery"
-            android:title="@string/menu_Notification" />
+            android:icon="@drawable/ic_notices"
+            android:title="Notices" />
 
+        <!-- 4. Complaints -->
+        <item
+            android:id="@+id/nav_complaints"
+            android:icon="@drawable/ic_complaints"
+            android:title="Complaints" />
+
+        <!-- 5. Reports -->
+        <item
+            android:id="@+id/nav_reports"
+            android:icon="@drawable/ic_reports"
+            android:title="Reports" />
+
+        <!-- 6. Guide -->
+        <item
+            android:id="@+id/nav_activity_list"
+            android:icon="@drawable/ic_guide"
+            android:title="Guide" />
+
+        <!-- 7. Contact Us -->
+        <item
+            android:id="@+id/nav_contact_us"
+            android:icon="@drawable/ic_feedback"
+            android:title="Contact Us" />
+
+        <!-- 8. User Profile -->
         <item
             android:id="@+id/nav_user_profile"
-            android:icon="@drawable/ic_menu_gallery"
-            android:title="@string/menu_userprofile" />
+            android:icon="@drawable/ic_person"
+            android:title="User Profile" />
+
+        <!-- 9. Settings -->
         <item
             android:id="@+id/nav_settings"
-            android:icon="@drawable/ic_menu_camera"
-            android:title="@string/menu_Settings" />
+            android:icon="@drawable/ic_settings"
+            android:title="Settings" />
 
-
+        <!-- 10. Logout -->
+        <item
+            android:id="@+id/nav_logout"
+            android:icon="@drawable/ic_logout"
+            android:title="Logout" />
     </group>
 </menu>

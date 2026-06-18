@@ -39,4 +39,22 @@
         android:name="com.s23010457.cleanzone.ui.userprofile.UserProfileFragment"
         android:label="@string/menu_userprofile"
         tools:layout="@layout/fragment_user_profile" />
+
+    <fragment
+        android:id="@+id/nav_complaints"
+        android:name="com.s23010457.cleanzone.ui.complaints.ComplaintsFragment"
+        android:label="Complaints"
+        tools:layout="@layout/fragment_complaints" />
+
+    <fragment
+        android:id="@+id/nav_reports"
+        android:name="com.s23010457.cleanzone.ui.reports.ReportsFragment"
+        android:label="Reports"
+        tools:layout="@layout/fragment_reports" />
+
+    <fragment
+        android:id="@+id/nav_contact_us"
+        android:name="com.s23010457.cleanzone.ui.contactus.ContactUsFragment"
+        android:label="Contact Us"
+        tools:layout="@layout/fragment_contact_us" />
 </navigation>

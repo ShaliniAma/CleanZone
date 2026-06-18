@@ -28,34 +28,34 @@ public class UserProfileFragment extends Fragment {
                              @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_user_profile, container, false);
 
+        // Populate user details from SharedPreferences
+        android.widget.TextView nameTv = view.findViewById(R.id.profileName);
+        android.widget.TextView emailTv = view.findViewById(R.id.profileEmail);
+        android.widget.TextView mobileTv = view.findViewById(R.id.profileMobile);
 
-        Button login = view.findViewById(R.id.login);
-        Button register = view.findViewById(R.id.register);
-        login.setOnClickListener(new View.OnClickListener() {
+        if (getActivity() != null) {
+            android.content.SharedPreferences prefs = getActivity().getSharedPreferences("UserPrefs", android.content.Context.MODE_PRIVATE);
+            String firstName = prefs.getString("first_name", "Shalini");
+            String lastName = prefs.getString("last_name", "Amanda");
+            String email = prefs.getString("email", "shalini@cleanzone.com");
+            String mobile = prefs.getString("mobile_number", "+1 234 567 890");
+
+            nameTv.setText(firstName + " " + lastName);
+            emailTv.setText(email);
+            mobileTv.setText(mobile);
+        }
+
+        Button logoutBtn = view.findViewById(R.id.btnLogout);
+        logoutBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent loginIntent = new Intent(getActivity(), LoginActivity.class);
-                startActivity(loginIntent);
-
-            }
-        });
-
-        register.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent regintent = new Intent(getActivity(), RegistrationActivity.class);
-                startActivity(regintent);
-
-            }
-        });
-
-        Button welcomebtn = view.findViewById(R.id.welcome);
-
-        welcomebtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent welintent = new Intent(getActivity(), WelcomeActivity.class);
-                startActivity(welintent);
+                android.widget.Toast.makeText(getActivity(), "Logged out successfully!", android.widget.Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(getActivity(), WelcomeActivity.class);
+                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                startActivity(intent);
+                if (getActivity() != null) {
+                    getActivity().finish();
+                }
             }
         });
 

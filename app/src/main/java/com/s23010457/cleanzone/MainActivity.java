@@ -1,8 +1,10 @@
 package com.s23010457.cleanzone;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Menu;
+import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.snackbar.Snackbar;
@@ -43,7 +45,7 @@ public class MainActivity extends AppCompatActivity {
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
         mAppBarConfiguration = new AppBarConfiguration.Builder(
-                R.id.nav_notifications, R.id.nav_dashboard,R.id.nav_pickups,R.id.nav_user_profile,R.id.nav_activity_list,R.id.nav_settings)
+                R.id.nav_notifications, R.id.nav_dashboard, R.id.nav_pickups, R.id.nav_user_profile, R.id.nav_activity_list, R.id.nav_settings, R.id.nav_complaints, R.id.nav_reports, R.id.nav_contact_us)
                 .setOpenableLayout(drawer)
                 .build();
 
@@ -52,9 +54,33 @@ public class MainActivity extends AppCompatActivity {
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);
 
-        // Bottom Navigation setup
+        // Intercept logout navigation in navigation drawer
+        navigationView.setNavigationItemSelectedListener(item -> {
+            int id = item.getItemId();
+            if (id == R.id.nav_logout) {
+                performLogout();
+                drawer.closeDrawers();
+                return true;
+            }
+            // For other items, use standard NavigationUI behavior
+            boolean handled = NavigationUI.onNavDestinationSelected(item, navController);
+            drawer.closeDrawers();
+            return handled;
+        });
+
+        // Bottom Navigation setup using NavigationUI for proper handling
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_nav);
         NavigationUI.setupWithNavController(bottomNavigationView, navController);
+
+
+    }
+
+    private void performLogout() {
+        Toast.makeText(this, "Logged out successfully!", Toast.LENGTH_SHORT).show();
+        Intent intent = new Intent(this, WelcomeActivity.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        startActivity(intent);
+        finish();
     }
 
     @Override

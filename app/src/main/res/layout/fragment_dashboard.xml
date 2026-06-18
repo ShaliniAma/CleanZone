@@ -73,7 +73,9 @@
                 android:columnCount="2"
                 android:useDefaultMargins="true">
 
+                <!-- 1. Schedule -->
                 <LinearLayout
+                    android:id="@+id/dash_schedule"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_columnWeight="1"
@@ -85,7 +87,7 @@
                         android:layout_width="64dp"
                         android:layout_height="64dp"
                         android:contentDescription="Schedule"
-                        android:src="@drawable/logofinal" />
+                        android:src="@drawable/ic_schedule" />
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -97,32 +99,11 @@
                         android:textStyle="bold" />
                 </LinearLayout>
 
+
+
+                <!-- 3. Complaints -->
                 <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_columnWeight="1"
-                    android:gravity="center"
-                    android:orientation="vertical"
-                    android:padding="8dp">
-
-                    <ImageView
-                        android:layout_width="64dp"
-                        android:layout_height="64dp"
-                        android:contentDescription="Notices"
-                        android:src="@drawable/logofinal" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="4dp"
-                        android:gravity="center_horizontal"
-                        android:text="Notices"
-                        android:textSize="18sp"
-                        android:textStyle="bold" />
-
-                </LinearLayout>
-
-                <LinearLayout
+                    android:id="@+id/dash_complaints"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_columnWeight="1"
@@ -134,7 +115,7 @@
                         android:layout_width="64dp"
                         android:layout_height="64dp"
                         android:contentDescription="Complaints"
-                        android:src="@drawable/logofinal" />
+                        android:src="@drawable/ic_complaints" />
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -146,7 +127,9 @@
                         android:textStyle="bold" />
                 </LinearLayout>
 
+                <!-- 4. Videos -->
                 <LinearLayout
+                    android:id="@+id/dash_videos"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_columnWeight="1"
@@ -158,7 +141,7 @@
                         android:layout_width="64dp"
                         android:layout_height="64dp"
                         android:contentDescription="Videos"
-                        android:src="@drawable/logofinal" />
+                        android:src="@drawable/ic_videos" />
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -170,31 +153,11 @@
                         android:textStyle="bold" />
                 </LinearLayout>
 
+
+
+                <!-- 6. Settings -->
                 <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_columnWeight="1"
-                    android:gravity="center"
-                    android:orientation="vertical"
-                    android:padding="8dp">
-
-                    <ImageView
-                        android:layout_width="64dp"
-                        android:layout_height="64dp"
-                        android:contentDescription="Notifications"
-                        android:src="@drawable/logofinal" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="4dp"
-                        android:gravity="center_horizontal"
-                        android:text="Notifications"
-                        android:textSize="18sp"
-                        android:textStyle="bold" />
-                </LinearLayout>
-
-                <LinearLayout
+                    android:id="@+id/dash_settings"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_columnWeight="1"
@@ -206,7 +169,7 @@
                         android:layout_width="64dp"
                         android:layout_height="64dp"
                         android:contentDescription="Settings"
-                        android:src="@drawable/logofinal" />
+                        android:src="@drawable/ic_settings_dash" />
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -218,7 +181,9 @@
                         android:textStyle="bold" />
                 </LinearLayout>
 
+                <!-- 7. Reports -->
                 <LinearLayout
+                    android:id="@+id/dash_reports"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_columnWeight="1"
@@ -230,7 +195,7 @@
                         android:layout_width="64dp"
                         android:layout_height="64dp"
                         android:contentDescription="Reports"
-                        android:src="@drawable/logofinal" />
+                        android:src="@drawable/ic_reports" />
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -242,7 +207,9 @@
                         android:textStyle="bold" />
                 </LinearLayout>
 
+                <!-- 8. Guide -->
                 <LinearLayout
+                    android:id="@+id/dash_guide"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_columnWeight="1"
@@ -254,7 +221,7 @@
                         android:layout_width="64dp"
                         android:layout_height="64dp"
                         android:contentDescription="Guide"
-                        android:src="@drawable/logofinal" />
+                        android:src="@drawable/ic_guide" />
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -266,7 +233,9 @@
                         android:textStyle="bold" />
                 </LinearLayout>
 
+                <!-- 9. Profile -->
                 <LinearLayout
+                    android:id="@+id/dash_profile"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_columnWeight="1"
@@ -278,7 +247,7 @@
                         android:layout_width="64dp"
                         android:layout_height="64dp"
                         android:contentDescription="Profile"
-                        android:src="@drawable/logofinal" />
+                        android:src="@drawable/ic_profile" />
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -290,7 +259,9 @@
                         android:textStyle="bold" />
                 </LinearLayout>
 
+                <!-- 10. Feedbacks -->
                 <LinearLayout
+                    android:id="@+id/dash_feedbacks"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_columnWeight="1"
@@ -301,8 +272,8 @@
                     <ImageView
                         android:layout_width="64dp"
                         android:layout_height="64dp"
-                        android:contentDescription="Profile"
-                        android:src="@drawable/logofinal" />
+                        android:contentDescription="Feedbacks"
+                        android:src="@drawable/ic_feedback" />
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -313,32 +284,6 @@
                         android:textSize="18sp"
                         android:textStyle="bold" />
                 </LinearLayout>
-
-
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_columnWeight="1"
-                    android:gravity="center"
-                    android:orientation="vertical"
-                    android:padding="8dp">
-
-                    <ImageView
-                        android:layout_width="64dp"
-                        android:layout_height="64dp"
-                        android:contentDescription="Profile"
-                        android:src="@drawable/logofinal" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="4dp"
-                        android:gravity="center_horizontal"
-                        android:text="Contact Us"
-                        android:textSize="18sp"
-                        android:textStyle="bold" />
-                </LinearLayout>
-
 
             </GridLayout>
         </LinearLayout>
